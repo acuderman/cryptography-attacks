@@ -19,7 +19,7 @@ function xor(text1, text2) {
 
   let lengthMax = Math.min(text1.length, text2.length)
   for (let i = 0; i < lengthMax; i++) {
-    xoredMessages =[...xoredMessages, text1[i] ^ text2[i]]
+    xoredMessages = [...xoredMessages, text1[i] ^ text2[i]]
   }
 
   return Buffer.from(xoredMessages);
