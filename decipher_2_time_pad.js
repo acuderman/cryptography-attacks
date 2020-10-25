@@ -32,7 +32,7 @@ function xorMessages(msg, target) {
   buffer.forEach((code, i) => {
     const character = String.fromCharCode(code)
 
-    return xoredMessage[i] = character
+    xoredMessage[i] = character
   })
 
   const normalizedChars = xoredMessage.map((char) => /[a-zA-Z]/.test(char) ? char : '?')
