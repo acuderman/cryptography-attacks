@@ -133,3 +133,11 @@ const ctrKey12 = '36f18357be4dbd77f050515c73fcf9f2'
 const ctrCipher12 = '69dda8455c7dd4254bf353b773304eec0ec7702330098ce7f7520d1cbbb20fc388d1b0adb5054dbd7370849dbf0b88d393f252e764f1f5f7ad97ef79d59ce29f5f51eeca32eabedd9afa9329'
 
 console.log('CUSTOM CTR', aesCtrDecipher(ctrKey12, ctrCipher12))
+
+const key = Buffer.from('sixteen-byte-key', 'utf-8')
+const message = Buffer.from('sixteen-byte-msg', 'utf-8')
+
+const cipher = crypto.createCipheriv('aes-128-ecb', key, null)
+
+const bufferedCipher = Buffer.from(cipher.update(message))
+console.log(bufferedCipher.toString('hex'))
